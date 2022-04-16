@@ -1,0 +1,49 @@
+{
+    "projects": [
+        {
+            "id": 0,
+            "project_name": "Random Quote Generator",
+            "description": "A page that automatically cycles through quotes and background colors.",
+            "technologies": "HTML, CSS & JavaScript",
+            "live_link": "https://travisalstrand.github.io/fsjs-project-1/",
+            "github_link": "https://github.com/TravisAlstrand/fsjs-project-1",
+            "image_urls": ["../images/project-1-img-1.png", "../images/project-1-img-2.png"]
+        },
+        {
+            "id": 1,
+            "project_name": "Data Pagination Project",
+            "description": "A page that lists 5 pages of students. Searching by name removes all students without matching names and removes unused pages.",
+            "technologies": "HTML, CSS & JavaScript",
+            "live_link": "https://travisalstrand.github.io/fsjs-project-2/",
+            "github_link": "https://github.com/TravisAlstrand/fsjs-project-2",
+            "image_urls": ["../images/project-2-img-1.png", "../images/project-2-img-2.png"]
+        },
+        {
+            "id": 2,
+            "project_name": "Interactive Form with Validation",
+            "description": "An interactive form that uses Regex for validation and changes selection options depending on what was already selected.",
+            "technologies": "HTML, CSS, Regex & JavaScript",
+            "live_link": "https://travisalstrand.github.io/fsjs-project-3/",
+            "github_link": "https://github.com/TravisAlstrand/fsjs-project-3",
+            "image_urls": ["../images/project-3-img-1.png", "../images/project-3-img-2.png"]
+        },
+        {
+            "id": 3,
+            "project_name": "Phrase Hunter Game",
+            "description": "A game that displays an empty phrase on screen and the user must guess letters to fill it. The user has only 5 wrong guesses before losing.",
+            "technologies": "HTML, CSS & JavaScript",
+            "live_link": "https://travisalstrand.github.io/fsjs-project-4/",
+            "github_link": "https://github.com/TravisAlstrand/fsjs-project-4",
+            "image_urls": ["../images/project-4-img-1.png", "../images/project-4-img-2.png"]
+        },
+        {
+            "id": 4,
+            "project_name": "Public API Requests Project",
+            "description": "A page that uses the Fetch API to gather random peoples information and display on screen. Clicking a person shows a pop up modal.",
+            "technologies": "HTML, CSS, Fetch API & JavaScript",
+            "live_link": "https://travisalstrand.github.io/fsjs-project-5/",
+            "github_link": "https://github.com/TravisAlstrand/fsjs-project-5",
+            "image_urls": ["../images/project-5-img-1.png", "../images/project-5-img-2.png"]
+        }
+    ]
+}
