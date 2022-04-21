@@ -2,7 +2,7 @@
   "name": "fsjs-project-6",
   "version": "1.0.0",
   "description": "Node, Express & Pug Portfolio",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
