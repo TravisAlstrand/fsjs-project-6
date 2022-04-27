@@ -1,5 +1,6 @@
 // variables
 const express = require('express');
+const res = require('express/lib/response');
 const data = require('./data');
 const app = express();
 
@@ -24,7 +25,7 @@ app.get('/about', (req, res) => {
 });
 
 // dynamic routes to project pages
-app.get('/project/:id', (req, res, next) => {
+app.get('/project/:id', (req, res) => {
 
     // variable for project with id of the one requested in url
     const projectData = data.projects[req.params.id];
@@ -37,8 +38,8 @@ app.get('/project/:id', (req, res, next) => {
         err.status = 404;
         // give user friendly message
         err.message = "I'm sorry, this project doesn't seem to exist!";
-        // continue, passing error
-        next(err);
+        // render 404 page, passing error
+        res.render('page-not-found', {err});
     } else {
         // if it does exist, render the page passing data at id's index
         res.render('project', {projectData});
@@ -46,21 +47,21 @@ app.get('/project/:id', (req, res, next) => {
 });
 
 // 404 handler
-app.use((req, res, next) => {
+app.use((req, res) => {
     const err = new Error();
     err.status = 404;
     err.message = "I'm sorry, this page doesn't seem to exist!";
-    next(err);
+    res.render('page-not-found', {err});
 })
 
 // global error handler
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
     if (err.status === 404) {
         next(err);
     } else {
         err.status = 500;
         err.message = "I'm sorry, something went wrong with the server!"
-        next(err);
+        res.render('error', {err});
     }
 })
 

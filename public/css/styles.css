@@ -302,6 +302,11 @@ nav a span {
   border: 1px solid transparent;
 }
 
+.error {
+  background-color: #000;
+  color: rgb(233, 233, 233);
+}
+
 
 /* 
   Tablet layout styles 
