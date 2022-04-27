@@ -6,16 +6,16 @@ const app = express();
 // view engine setup
 app.set('view engine', 'pug');
 
-/* middleware for accessing the req.body */
+// middleware for accessing the req.body 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // static middleware setup
 app.use('/static', express.static('public'));
 
-// home page route
+// home page route passing json data as locals
 app.get('/', (req, res) => {
-    res.render('index', data.projects);
+    res.render('index', {data});
 });
 
 // route to about page
@@ -25,12 +25,13 @@ app.get('/about', (req, res) => {
 
 // dynamic routes to project pages
 app.get('/project/:id', (req, res, next) => {
-    // check if a project with this id exists
-    if (data[req.params.id]) {
-        // if so, render the page passing data at id's index
-        res.render('project', data.projects[req.params.id])
-    } else {
-        // if not construct new error
+
+    // variable for project with id of the one requested in url
+    const projectData = data.projects[req.params.id];
+
+    // check if a project with this id doesn't exist
+    if (projectData === undefined) {
+        // if so, construct new error
         const err = new Error();
         // give page not found error status
         err.status = 404;
@@ -38,6 +39,9 @@ app.get('/project/:id', (req, res, next) => {
         err.message = "I'm sorry, this project doesn't seem to exist!";
         // continue, passing error
         next(err);
+    } else {
+        // if it does exist, render the page passing data at id's index
+        res.render('project', {projectData});
     }
 });
 
